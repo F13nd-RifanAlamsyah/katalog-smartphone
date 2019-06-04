@@ -1,0 +1,2 @@
+akun admin : rifan.alamsyah02@gmail.com pass: 123
+akun user : sinta@ac.com pass : 123

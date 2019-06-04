@@ -1,0 +1,17 @@
+body {
+    background-color: #666;
+    overflow-x: hidden;
+}
+
+.content {
+    margin-top: 65px;
+
+}
+
+.card-columns {
+    column-count: 4;
+}
+
+.btn .btn-sm{
+	display: inline-block;;
+}
