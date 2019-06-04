@@ -26,6 +26,9 @@ $transaksiSelesai=query("$transaksi && transaksi.status='selesai'
 $countPending=mysqli_query($conn,"$transaksi && transaksi.status='pending'");
 mysqli_num_rows($countPending);
 
+$countTolak=mysqli_query($conn,"$transaksi && transaksi.status='tolak'");
+mysqli_num_rows($countTolak);
+
 if(isset($_GET["id_produk"])){
 	$id_produk=$_GET["id_produk"];
 	$id_akun=$_SESSION["id_akun"];
