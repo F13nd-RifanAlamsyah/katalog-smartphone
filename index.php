@@ -1,7 +1,7 @@
 <?php
-session_start();
 require 'function/function.php';
 require 'function/login.php';
+
 $produkList=query("SELECT DISTINCT merk FROM produk");
 if(isset($_SESSION["id_akun"])){
     $id_akun=$_SESSION["id_akun"];
@@ -92,10 +92,16 @@ if(isset($_POST["edit_informasi"])){
                 <li class="nav-item">
                     <a class="nav-link" href="">Profil</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=keranjang">Keranjang <span class="badge badge-light">4</span></a>
-                </li>
+                
+                <?php
+                if(isset($_SESSION["login"])){
+                    if($_SESSION["login"]=='user'){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=keranjang">Keranjang <span class="badge badge-light"><?= $hasilTransaski ?></span></a>
+                    </li>
+                <?php
+                    }
+                } ?>
                 
                 <?php 
                 if(isset($_SESSION["login"])){

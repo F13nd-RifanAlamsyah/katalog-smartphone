@@ -7,27 +7,28 @@ $transaksi="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi
 	produk ON transaksi.id_produk=produk.id_produk
 	WHERE transaksi.id_akun='$id_akun'";
 
-$transaksiPending=query("$transaksi && transaksi.status='pending'
-");
+$transaksiPending=query("$transaksi && transaksi.status='pending'");
+$transaksiTolak=query("$transaksi && transaksi.status='tolak'");
+$transaksiKirim=query("$transaksi && transaksi.status='kirim'");
+$transaksiSampai=query("$transaksi && transaksi.status='sampai'");
+$transaksiSelesai=query("$transaksi && transaksi.status='selesai'");
 
-$transaksiTolak=query("$transaksi && transaksi.status='tolak'
-");
+// penghitungan tiap tabel transaksi
 
-$transaksiKirim=query("$transaksi && transaksi.status='Kirim'
-");
-
-$transaksiSampai=query("$transaksi && transaksi.status='sampai'
-");
-
-$transaksiSelesai=query("$transaksi && transaksi.status='selesai'
-");
-
-// penghitungan tiap tabel
 $countPending=mysqli_query($conn,"$transaksi && transaksi.status='pending'");
-mysqli_num_rows($countPending);
+$pending=mysqli_num_rows($countPending);
 
 $countTolak=mysqli_query($conn,"$transaksi && transaksi.status='tolak'");
-mysqli_num_rows($countTolak);
+$tolak=mysqli_num_rows($countTolak);
+
+$countKirim=mysqli_query($conn,"$transaksi && transaksi.status='kirim'");
+$kirim=mysqli_num_rows($countKirim);
+
+$countSampai=mysqli_query($conn,"$transaksi && transaksi.status='sampai'");
+$sampai=mysqli_num_rows($countSampai);
+
+$countSelesai=mysqli_query($conn,"$transaksi && transaksi.status='selesai'");
+$selesai=mysqli_num_rows($countSelesai);
 
 if(isset($_GET["id_produk"])){
 	$id_produk=$_GET["id_produk"];
@@ -35,14 +36,31 @@ if(isset($_GET["id_produk"])){
     if(transaksi($id_produk,$id_akun)>0){
         echo "
             <script>
-                //document.location.href='index.php?page=kelolaProduk';
+                document.location.href='index.php?page=keranjang';
             </script>
         ";
     }else{
         echo "
             <script>
                 alert('gagal');
-                //document.location.href='index.php?page=kelolaProduk';
+                document.location.href='index.php?page=keranjang';
+            </script>
+        ";
+    }
+}
+
+if(isset($_POST["pending_to_kirim"])){
+    if(pendingToKirim($_POST)>0){
+        echo "
+            <script>
+                //document.location.href='index.php?page=kelolaAdmin';
+            </script>
+        ";
+    }else{
+        echo "
+            <script>
+                alert('gagal');
+                //document.location.href='index.php?page=kelolaAdmin';
             </script>
         ";
     }

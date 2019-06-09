@@ -1,4 +1,5 @@
 <?php
+session_start();
 //koneksi database
 $conn=mysqli_connect("localhost","root","","ac");
 
@@ -275,17 +276,46 @@ function hapusAdmin($id_akun){
 
 function transaksi($id_produk,$id_akun){
     global $conn;
-    // $nama_akun=htmlspecialchars($data["nama_akun"]);
-    // $email_akun=htmlspecialchars($data["email_akun"]);
-    // $password=htmlspecialchars($data["password"]);
-    // $password2=htmlspecialchars($data["password2"]);
-
     //query insert data
     $query="INSERT INTO transaksi
                 VALUES
                 ('','$id_akun','$id_produk','pending','','','','','','')
                 ";
 
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+if(isset($_SESSION["id_akun"])){
+    $id_akun=$_SESSION["id_akun"];
+    $transaksi="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi.status, transaksi.bukti_bayar,transaksi.no_telp,transaksi.alamat,transaksi.resi,transaksi.review,transaksi.alasan_tolak,produk.id_produk,produk.nama_produk, produk.harga,produk.gambar 
+    FROM akun JOIN 
+    transaksi ON akun.id_akun=transaksi.id_akun JOIN
+    produk ON transaksi.id_produk=produk.id_produk
+    WHERE transaksi.id_akun='$id_akun'";
+    $countTransaksi=mysqli_query($conn,"$transaksi");
+    $hasilTransaski=mysqli_num_rows($countTransaksi);
+}
+
+//proses transaksi
+function pendingToKirim($data){
+    global $conn;
+    $id_transaksi=$data["id_transaksi"];
+    $no_telp=htmlspecialchars($data["no_telp"]);
+    $alamat=htmlspecialchars($data["alamat"]);
+
+    $gambar =upload();
+    if(!$gambar){
+        return false;
+    }
+
+    $query="UPDATE transaksi SET
+                no_telp='$no_telp',
+                alamat='$alamat',
+                bukti_bayar='$gambar'
+                
+                WHERE id_transaksi=$id_transaksi
+                ";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
