@@ -298,7 +298,7 @@ if(isset($_SESSION["id_akun"])){
 }
 
 //proses transaksi
-function pendingToKirim($data){
+function pendingToBayar($data){
     global $conn;
     $id_transaksi=$data["id_transaksi"];
     $no_telp=htmlspecialchars($data["no_telp"]);
@@ -313,6 +313,21 @@ function pendingToKirim($data){
                 no_telp='$no_telp',
                 alamat='$alamat',
                 bukti_bayar='$gambar'
+                
+                WHERE id_transaksi=$id_transaksi
+                ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function pendingToTolak($data){
+    global $conn;
+    $id_transaksi=$data["id_transaksi"];
+    $alasan_tolak=htmlspecialchars($data["alasan_tolak"]);
+
+    $query="UPDATE transaksi SET
+                alasan_tolak='$alasan_tolak',
+                status='tolak'
                 
                 WHERE id_transaksi=$id_transaksi
                 ";

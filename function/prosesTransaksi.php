@@ -49,18 +49,35 @@ if(isset($_GET["id_produk"])){
     }
 }
 
-if(isset($_POST["pending_to_kirim"])){
-    if(pendingToKirim($_POST)>0){
+if(isset($_POST["pending_to_bayar"])){
+    if(pendingToBayar($_POST)>0){
         echo "
             <script>
-                //document.location.href='index.php?page=kelolaAdmin';
+                document.location.href='index.php?page=keranjang';
             </script>
         ";
     }else{
         echo "
             <script>
                 alert('gagal');
-                //document.location.href='index.php?page=kelolaAdmin';
+                document.location.href='index.php?page=keranjang';
+            </script>
+        ";
+    }
+}
+
+if(isset($_POST["pending_to_tolak"])){
+    if(pendingToTolak($_POST)>0){
+        echo "
+            <script>
+                document.location.href='index.php?page=keranjang';
+            </script>
+        ";
+    }else{
+        echo "
+            <script>
+                alert('gagal');
+                document.location.href='index.php?page=keranjang';
             </script>
         ";
     }
