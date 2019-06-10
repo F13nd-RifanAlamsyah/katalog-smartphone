@@ -50,11 +50,11 @@ $produk=query("SELECT * FROM produk");
     
     <?php 
         if(isset($_GET["tambah_produk"])){ 
-            require_once 'page/tambahProduk.php';
+            require_once 'module/tambahProduk.php';
         }else if(isset($_GET["id_produk"])){
             $id_produk=$_GET["id_produk"];
             $produkEdit=query("SELECT * FROM produk WHERE id_produk=$id_produk"); 
-            require_once 'page/editProduk.php';  
+            require_once 'module/editProduk.php';  
         }
     ?>
     

@@ -50,11 +50,11 @@ $admin=query("SELECT * FROM akun WHERE role='admin'");
     
     <?php 
         if(isset($_GET["tambah_admin"])){ 
-            require_once 'page/tambahAdmin.php';
+            require_once 'module/tambahAdmin.php';
         }else if(isset($_GET["id_admin"])){
             $id_admin=$_GET["id_admin"];
             $adminEdit=query("SELECT * FROM akun WHERE id_akun='$id_admin'"); 
-            require_once 'page/editAdmin.php';  
+            require_once 'module/editAdmin.php';  
         }
     ?>
     

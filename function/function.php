@@ -3,6 +3,17 @@ session_start();
 //koneksi database
 $conn=mysqli_connect("localhost","root","","ac");
 
+if(isset($_SESSION["id_akun"])){
+    $id_akun=$_SESSION["id_akun"];
+    $transaksi="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi.status, transaksi.bukti_bayar,transaksi.no_telp,transaksi.alamat,transaksi.resi,transaksi.review,transaksi.alasan_tolak,produk.id_produk,produk.nama_produk, produk.harga,produk.gambar 
+    FROM akun JOIN 
+    transaksi ON akun.id_akun=transaksi.id_akun JOIN
+    produk ON transaksi.id_produk=produk.id_produk
+    WHERE transaksi.id_akun='$id_akun'";
+    $countTransaksi=mysqli_query($conn,"$transaksi");
+    $hasilTransaski=mysqli_num_rows($countTransaksi);
+}
+
 //fungsi query
 function query($query){
     global $conn;
@@ -286,17 +297,6 @@ function transaksi($id_produk,$id_akun){
     return mysqli_affected_rows($conn);
 }
 
-if(isset($_SESSION["id_akun"])){
-    $id_akun=$_SESSION["id_akun"];
-    $transaksi="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi.status, transaksi.bukti_bayar,transaksi.no_telp,transaksi.alamat,transaksi.resi,transaksi.review,transaksi.alasan_tolak,produk.id_produk,produk.nama_produk, produk.harga,produk.gambar 
-    FROM akun JOIN 
-    transaksi ON akun.id_akun=transaksi.id_akun JOIN
-    produk ON transaksi.id_produk=produk.id_produk
-    WHERE transaksi.id_akun='$id_akun'";
-    $countTransaksi=mysqli_query($conn,"$transaksi");
-    $hasilTransaski=mysqli_num_rows($countTransaksi);
-}
-
 //proses transaksi
 function pendingToBayar($data){
     global $conn;
@@ -328,6 +328,21 @@ function pendingToTolak($data){
     $query="UPDATE transaksi SET
                 alasan_tolak='$alasan_tolak',
                 status='tolak'
+                
+                WHERE id_transaksi=$id_transaksi
+                ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function pendingToKirim($data){
+    global $conn;
+    $id_transaksi=$data["id_transaksi"];
+    $resi=htmlspecialchars($data["resi"]);
+
+    $query="UPDATE transaksi SET
+                resi='$resi',
+                status='kirim'
                 
                 WHERE id_transaksi=$id_transaksi
                 ";

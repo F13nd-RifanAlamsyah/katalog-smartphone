@@ -3,7 +3,9 @@ if(!isset($_GET["merk"])){
     $produk=query("SELECT * FROM produk");
 ?>
     <div class="card bg-dark text-white text-center">
-        <h4>Semua Produk</h4>
+        <div class="card-header">
+            <h5>Semua Produk</h5>
+        </div>
     </div>
 <?php
 }else{

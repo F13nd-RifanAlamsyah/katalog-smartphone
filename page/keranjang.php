@@ -8,18 +8,20 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
 ?>
 
 <div class="card bg-dark text-white text-center mb-3">
-    <h4>Keranjang Transaksi</h4>
+    <div class="card-header">
+        <h5>Keranjang Transaksi</h5>    
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-9">
         <div class="accordion" id="accordionExample">
             <?php 
-                require 'page/transaksiPending.php';
-                require 'page/transaksiTolak.php';
-                require 'page/transaksiKirim.php';
-                require 'page/transaksiSampai.php';
-                require 'page/transaksiSelesai.php';
+                require 'module/transaksiPending.php';
+                require 'module/transaksiTolak.php';
+                require 'module/transaksiKirim.php';
+                require 'module/transaksiSampai.php';
+                require 'module/transaksiSelesai.php';
              ?>
         </div>       
     </div>
@@ -28,7 +30,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
     <?php 
     if(isset($_GET["id_transaksi"])) {
         $id_transaksiGET=$_GET["id_transaksi"];
-        $transaksiPendingGET=query("$transaksi && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksiGET'")[0];
+        $transaksiPendingGET=query("$transaksi WHERE transaksi.id_akun='$id_akun' && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksiGET'")[0];
         if($transaksiPendingGET['bukti_bayar']==''){
         ?>
             <div class="col-md-3">
@@ -100,7 +102,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
     <?php 
     if(isset($_GET["id_transaksi_batal"])){
         $id_transaksi_batalGET=$_GET["id_transaksi_batal"];
-        $transaksiPendingBatalGET=query("$transaksi && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksi_batalGET'")[0];
+        $transaksiPendingBatalGET=query("$transaksi WHERE transaksi.id_akun='$id_akun' && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksi_batalGET'")[0];
         if($transaksiPendingBatalGET['bukti_bayar']==''){
         ?>
             <div class="col-md-3">

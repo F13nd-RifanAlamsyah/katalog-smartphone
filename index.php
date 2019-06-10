@@ -111,6 +111,7 @@ if(isset($_POST["edit_informasi"])){
                         Admin
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.php?page=adminTransaksi">Transaksi</a>
                         <a class="dropdown-item" href="index.php?page=kelolaProduk">Kelola Produk</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Profil Toko</a>
@@ -157,16 +158,10 @@ if(isset($_POST["edit_informasi"])){
     <!-- /konten -->
 
     <!--  modal  -->
-    <?php require 'page/modal.php'; ?>
+    <?php require 'module/modal.php'; ?>
     <!-- /modal -->
 
     <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script>
-        $custom-file-text:(
-          en: "Browse",
-          es: "Elegir"
-        );
-    </script>
     <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
