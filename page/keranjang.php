@@ -17,11 +17,11 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
     <div class="col-md-9">
         <div class="accordion" id="accordionExample">
             <?php 
-                require 'module/transaksiPending.php';
-                require 'module/transaksiTolak.php';
-                require 'module/transaksiKirim.php';
-                require 'module/transaksiSampai.php';
-                require 'module/transaksiSelesai.php';
+                require 'module/transaksi/transaksiPending.php';
+                require 'module/transaksi/transaksiTolak.php';
+                require 'module/transaksi/transaksiKirim.php';
+                require 'module/transaksi/transaksiSampai.php';
+                require 'module/transaksi/transaksiSelesai.php';
              ?>
         </div>       
     </div>

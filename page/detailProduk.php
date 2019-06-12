@@ -15,7 +15,13 @@ $produkDetail=query("SELECT * FROM produk WHERE id_produk='$id_produk'")[0];
 				<h6 class="text-center">Harga Rp <?= $produkDetail["harga"];?>,-</h6>
 				<p class="text-justify">Deskripsi : <?= $produkDetail["deskripsi"];?></p>
 			</div>
-			<a href="#" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Beli</a>
+			<?php
+                if(isset($_SESSION["akun"])){
+                    if($_SESSION["akun"]=='user'){ ?>
+						<a href="" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Beli</a>
+				<?php 
+					}
+				} ?>
 		</div>
 	</div>
 	<div class="col-7">

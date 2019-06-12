@@ -158,7 +158,7 @@ if(isset($_POST["edit_informasi"])){
     <!-- /konten -->
 
     <!--  modal  -->
-    <?php require 'module/modal.php'; ?>
+    <?php require 'module/login/modal.php'; ?>
     <!-- /modal -->
 
     <script src="assets/js/jquery-3.3.1.min.js"></script>

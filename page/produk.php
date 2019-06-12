@@ -34,9 +34,13 @@ if(!isset($_GET["merk"])){
                 <h5 class="card-title"><?= $row["nama_produk"];?></h5>
                 <p class="card-text">(<?= $row["ram"];?>/<?= $row["internal"];?>)</p>
                 <p><strong>Harga Rp <?= $row["harga"];?> ,-</strong></p>
-                <?php if($_SESSION["akun"]=='user'){ ?>
-                    <a href="index.php?page=keranjang&id_produk=<?= $row["id_produk"];?>" class="btn btn-danger btn-sm btn-block" role="button" aria-pressed="true">Beli</a>
-                <?php } ?>
+                <?php
+                if(isset($_SESSION["akun"])){
+                    if($_SESSION["akun"]=='user'){ ?>
+                        <a href="index.php?page=keranjang&id_produk=<?= $row["id_produk"];?>" class="btn btn-danger btn-sm btn-block" role="button" aria-pressed="true">Beli</a>
+                    <?php
+                    }
+                } ?>
                 <a href="index.php?page=detailProduk&id_produk=<?= $row["id_produk"];?>" class="btn btn-primary btn-sm btn-block" role="button" aria-pressed="true">Detail</a>
             </div>
         </div>

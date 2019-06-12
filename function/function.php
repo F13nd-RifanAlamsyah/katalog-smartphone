@@ -324,6 +324,11 @@ function pendingToTolak($data){
     global $conn;
     $id_transaksi=$data["id_transaksi"];
     $alasan_tolak=htmlspecialchars($data["alasan_tolak"]);
+    $role=htmlspecialchars($data["role"]);
+
+    if($role=='admin'){
+        $alasan_tolak="Admin : $alasan_tolak";
+    }
 
     $query="UPDATE transaksi SET
                 alasan_tolak='$alasan_tolak',
