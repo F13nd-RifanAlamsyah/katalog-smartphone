@@ -72,11 +72,11 @@ if(isset($_POST["edit_informasi"])){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link <?php if($_GET["page"]=='dashboard'){echo 'active'; } ?>" href="index.php?page=dashboard">Dashboard</a>
                 </li>
                 
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="?page=admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php if($_GET["page"]=='produk'){echo 'active'; } ?>" href="?page=admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         Produk
                     </a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown">
@@ -90,14 +90,14 @@ if(isset($_POST["edit_informasi"])){
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">Profil</a>
+                    <a class="nav-link <?php if($_GET["page"]=='profil'){echo 'active'; } ?>" href="index.php?page=profil">Profil</a>
                 </li>
                 
                 <?php
                 if(isset($_SESSION["login"])){
                     if($_SESSION["login"]=='user'){ ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=keranjang">Keranjang <span class="badge badge-light"><?= $hasilTransaski ?></span></a>
+                        <a class="nav-link <?php if($_GET["page"]=='keranjang'){echo 'active'; } ?>" href="index.php?page=keranjang">Keranjang <span class="badge badge-light"><?= $hasilTransaski ?></span></a>
                     </li>
                 <?php
                     }
@@ -107,15 +107,15 @@ if(isset($_POST["edit_informasi"])){
                 if(isset($_SESSION["login"])){
                     if($_SESSION["login"]=='admin'){ ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle <?php if($_GET["page"]=='adminTransaksi'||$_GET["page"]=='kelolaProduk'||$_GET["page"]=='kelolaAdmin'){echo 'active'; } ?>" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Admin
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=adminTransaksi">Transaksi</a>
-                        <a class="dropdown-item" href="index.php?page=kelolaProduk">Kelola Produk</a>
+                        <a class="dropdown-item <?php if($_GET["page"]=='adminTransaksi'){echo 'active'; } ?>" href="index.php?page=adminTransaksi">Transaksi</a>
+                        <a class="dropdown-item <?php if($_GET["page"]=='kelolaProduk'){echo 'active'; } ?>" href="index.php?page=kelolaProduk">Kelola Produk</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Profil Toko</a>
-                        <a class="dropdown-item" href="index.php?page=kelolaAdmin">Kelola Admin</a>                        
+                        <a class="dropdown-item <?php if($_GET["page"]=='kelolaAdmin'){echo 'active'; } ?>" href="index.php?page=kelolaAdmin">Kelola Admin</a>                        
                     </div>
                 </li>
                 <?php }
