@@ -72,7 +72,7 @@ if(isset($_POST["edit_informasi"])){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php?page=dashboard">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 
                 <li class="nav-item dropdown ">
@@ -143,12 +143,8 @@ if(isset($_POST["edit_informasi"])){
                 if(file_exists("$file")){
                     include_once($file);
                 }else{
-                    ?>
-                    <div class="card text-white bg-dark">
-                        <div class="card-body">
-                            <h3 class="text-center">Halaman Belum dibuat</h3>
-                        </div>
-                    </div>
+                ?>
+                    <?php include 'page/dashboard.php'; ?>
                 <?php
                 }
             ?>
@@ -163,5 +159,6 @@ if(isset($_POST["edit_informasi"])){
 
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+
 </body>
 </html>

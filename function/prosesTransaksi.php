@@ -56,7 +56,7 @@ $countAdminSampai=mysqli_query($conn,"$transaksi WHERE transaksi.status='sampai'
 $adminSampai=mysqli_num_rows($countAdminSampai);
 
 $countAdminSelesai=mysqli_query($conn,"$transaksi WHERE transaksi.status='selesai'");
-$adminSelesai=mysqli_num_rows($countAdminKirim);
+$adminSelesai=mysqli_num_rows($countAdminSelesai);
 
 
 
@@ -135,6 +135,41 @@ if(isset($_POST["pending_to_kirim"])){
             <script>
                 alert('gagal');
                 document.location.href='index.php?page=adminTransaksi';
+            </script>
+        ";
+    }
+}
+
+if(isset($_GET["id_transaksi_terima_barang"])){
+    $id_transaksi=$_GET["id_transaksi_terima_barang"];
+    if(kirimToSampai($id_transaksi)>0){
+        echo "
+            <script>
+                document.location.href='index.php?page=keranjang';
+            </script>
+        ";
+    }else{
+        echo "
+            <script>
+                alert('gagal');
+                document.location.href='index.php?page=keranjang';
+            </script>
+        ";
+    }
+}
+
+if(isset($_POST["sampai_to_selesai"])){
+    if(sampaiToSelesai($_POST)>0){
+        echo "
+            <script>
+                document.location.href='index.php?page=keranjang';
+            </script>
+        ";
+    }else{
+        echo "
+            <script>
+                alert('gagal');
+                document.location.href='index.php?page=keranjang';
             </script>
         ";
     }

@@ -354,3 +354,30 @@ function pendingToKirim($data){
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+function kirimToSampai($id_transaksi){
+    global $conn;
+
+    $query="UPDATE transaksi SET
+                status='sampai'
+                
+                WHERE id_transaksi=$id_transaksi
+                ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+function sampaiToSelesai($data){
+    global $conn;
+    $id_transaksi=$data["id_transaksi"];
+    $review=htmlspecialchars($data["review"]);
+
+    $query="UPDATE transaksi SET
+                review='$review',
+                status='selesai'
+                
+                WHERE id_transaksi=$id_transaksi
+                ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}

@@ -27,7 +27,9 @@
                                     <th scope="row">1</th>
                                     <td><?= $row["nama_produk"];?></td>
                                     <td><?= $row["resi"];?></td>
-                                    <td><button class="btn-primary btn-sm btn">Terima Barang</button></td>
+                                    <td>
+                                        <a href="index.php?page=keranjang&id_transaksi_terima_barang=<?= $row["id_transaksi"];?>" class="btn btn-primary btn-sm" role="button" aria-pressed="true" name="terimaBarang">Terima Barang</a>
+                                    </td>
                                 </tr>
                             <?php
                         } ?>

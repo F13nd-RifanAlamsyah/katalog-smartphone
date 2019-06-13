@@ -128,4 +128,33 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
         }
     }
     ?>
+
+    <!-- modal review -->
+    <?php 
+    if(isset($_GET["id_transaksi_review"])){
+        $id_transaksi_review=$_GET["id_transaksi_review"];
+        $transaksiSampaiGET=query("$transaksi WHERE transaksi.id_akun='$id_akun' && transaksi.status='sampai' && transaksi.id_transaksi='$id_transaksi_review'")[0];
+        ?>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="text-center">Alasan Penolakan</h6>
+                </div>
+                <div class="card-body"> 
+                    <form action="" method="post" enctype="multipart/form-data">    
+                        <input type="hidden" value="<?= $_GET["id_transaksi_review"];?>" name="id_transaksi">
+                        <img src="img/<?= $transaksiSampaiGET["gambar"]; ?>" alt="" class="card-img-top">
+                        <p class="text-center"><?= $transaksiSampaiGET["nama_produk"]; ?></p>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Review</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm" name="sampai_to_selesai">Kirim</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <?php    
+    }
+    ?>
 </div>

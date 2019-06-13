@@ -27,7 +27,7 @@
                                     <th>1</th>
                                     <td><?= $row["nama_produk"];?></td>
                                     <td><?= $row["harga"];?></td>
-                                    <td><?= $row["status"];?></td>
+                                    <td><?= $row["review"];?></td>
                                 </tr>
                             <?php
                         } ?>

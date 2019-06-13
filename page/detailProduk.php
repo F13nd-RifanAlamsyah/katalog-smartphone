@@ -18,7 +18,7 @@ $produkDetail=query("SELECT * FROM produk WHERE id_produk='$id_produk'")[0];
 			<?php
                 if(isset($_SESSION["akun"])){
                     if($_SESSION["akun"]=='user'){ ?>
-						<a href="" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Beli</a>
+						<a href="index.php?page=keranjang&id_produk=<?= $_GET["id_produk"];?>" class="btn btn-danger btn-sm btn-block" role="button" aria-pressed="true">Beli</a>
 				<?php 
 					}
 				} ?>

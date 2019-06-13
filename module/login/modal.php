@@ -47,13 +47,8 @@
                 <div class="card-body">
                     <h5 class="card-title"><?= $akun["nama_akun"]; ?></h5>
                     <img class="card-img-top" style="width: 300px; height: auto; " src="img/<?= $akun["gambar"];?>" alt="">
-                    <p class="card-text text-muted"><?= $akun["role"]; ?></p>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary">Belum Dibayar</button>
-                        <button type="button" class="btn btn-success">Dalam Perjalanan</button>
-                        <button type="button" class="btn btn-info">Review Barang</button>
-                    </div>
-                  </div>
+                    <p class="card-text text-muted"><?= $akun["role"]; ?></p>    
+                </div>
                 <div class="card-footer">
                     <a href="function/logout.php" class="btn btn-success float-left btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#informasi">Edit Informasi Akun</a>
 

@@ -29,7 +29,9 @@
                                     <td><?= $row["nama_produk"];?></td>
                                     <td><?= $row["harga"];?></td>
                                     <td><?= $row["alamat"];?></td>
-                                    <td><button class="btn-primary btn-sm btn">Review</button></td>
+                                    <td>
+                                        <a href="index.php?page=keranjang&id_transaksi_review=<?= $row["id_transaksi"];?>" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Review</a>
+                                    </td>
                                 </tr>
                             <?php
                         } ?>
@@ -40,7 +42,7 @@
                 <div class="text-center">
                     <h5>Tidak ada transaksi</h5>
                     <p>
-                        <a href="index.php?page=produk" class="btn btn-primary" role="button" aria-pressed="true">Produk</a>
+                        <a href="index.php?page=produk" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Produk</a>
                     </p>
                 </div>
             <?php
