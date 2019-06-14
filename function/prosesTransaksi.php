@@ -2,7 +2,7 @@
 $id_akun=$_SESSION["id_akun"];
 
 // query umum
-$transaksi="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi.status, transaksi.bukti_bayar,transaksi.no_telp,transaksi.alamat,transaksi.resi,transaksi.review,transaksi.alasan_tolak,produk.id_produk,produk.nama_produk, produk.harga,produk.gambar 
+$transaksi="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi.status, transaksi.bukti_bayar,transaksi.no_telp,transaksi.alamat,transaksi.resi,transaksi.review,transaksi.alasan_tolak,produk.id_produk,produk.stok,produk.nama_produk, produk.harga,produk.gambar 
 	FROM akun JOIN 
 	transaksi ON akun.id_akun=transaksi.id_akun JOIN
 	produk ON transaksi.id_produk=produk.id_produk

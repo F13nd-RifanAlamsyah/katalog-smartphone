@@ -42,6 +42,8 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                 <div class="card-body"> 
                     <form action="" method="post" enctype="multipart/form-data">    
                         <input type="hidden" value="<?= $_GET["id_transaksi_setujui"];?>" name="id_transaksi">
+                        <input type="hidden" value="<?= $transaksiSetujui["stok"];?>" name="stok">
+                        <input type="text" value="<?= $transaksiSetujui["id_produk"];?>" name="id_produk">
                         <img src="img/<?= $transaksiSetujui["gambar"]; ?>" alt="" class="card-img-top">
                         <p class="text-center"><?= $transaksiSetujui["nama_produk"]; ?></p>
                         <div class="form-group">

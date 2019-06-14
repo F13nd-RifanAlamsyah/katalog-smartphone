@@ -62,6 +62,14 @@ $countInfoPengguna=mysqli_num_rows($infoPengguna);
 		<div class="col-md-12">
 			<a href="index.php?page=produk" class="btn btn-block btn-outline-dark" role="button" aria-pressed="true">Produk</a>
 		</div>
-
+		
+		<div class="col-md-12 mt-3">
+			<p class="float-right">
+				<a href="" class="btn btn-success btn-sm"><i class=""></i> <?= $toko["whatsapp"]; ?></a>
+				<a href="<?= $toko["instagram_link"] ?>" class="btn btn-danger btn-sm"><i class=""></i> <?= $toko["instagram"]; ?></a>
+				<a href="<?= $toko["facebook_link"] ?>" class="btn btn-primary btn-sm"><i class=""></i> <?= $toko["facebook"]; ?></a>
+				<a href="#" class="btn btn-dark btn-sm"><i class=""></i> <?= $toko["no_telepon"]; ?></a>
+			</p>
+		</div>
 	</div>
 </div>

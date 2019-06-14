@@ -234,6 +234,41 @@ function editProduk($data){
     return mysqli_affected_rows($conn);
 }
 
+function editToko($data){
+    global $conn;
+    $id_toko=$data["id_toko"];
+    $nama_toko=htmlspecialchars($data["nama_toko"]);
+    $nomor_rekening=htmlspecialchars($data["nomor_rekening"]);
+    $no_telepon=htmlspecialchars($data["no_telepon"]);
+    $whatsapp=htmlspecialchars($data["whatsapp"]);
+    $instagram=htmlspecialchars($data["instagram"]);
+    $instagram_link=htmlspecialchars($data["instagram_link"]);
+    $facebook=htmlspecialchars($data["facebook"]);
+    $facebook_link=htmlspecialchars($data["facebook_link"]);
+
+    if($_FILES['gambar']['error']===4){
+        $gambar=$gambarLama;
+    }else{
+        $gambar=upload();
+    }
+
+    $query="UPDATE toko SET
+                nama_toko='$nama_toko',
+                nomor_rekening='$nomor_rekening',
+                no_telepon='$no_telepon',
+                whatsapp='$whatsapp',
+                instagram='$instagram',
+                instagram_link='$instagram_link',
+                facebook='$facebook',
+                facebook_link='$facebook_link',
+                logo='$gambar'
+                
+                WHERE id_toko=$id_toko
+                ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
 function editAkun($data){
     global $conn;
     $id_akun=$data["id_akun"];
@@ -343,13 +378,16 @@ function pendingToTolak($data){
 function pendingToKirim($data){
     global $conn;
     $id_transaksi=$data["id_transaksi"];
+    $id_produk=$data["id_produk"];
+    $stok=$data["stok"]-1;
     $resi=htmlspecialchars($data["resi"]);
 
-    $query="UPDATE transaksi SET
-                resi='$resi',
-                status='kirim'
+    $query="UPDATE transaksi, produk SET
+                transaksi.resi='$resi',
+                transaksi.status='kirim',
+                produk.stok=$stok
                 
-                WHERE id_transaksi=$id_transaksi
+                WHERE transaksi.id_transaksi=$id_transaksi AND produk.id_produk=$id_produk
                 ";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);

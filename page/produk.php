@@ -32,12 +32,40 @@ if(!isset($_GET["merk"])){
             <img src="img/<?= $row["gambar"];?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
                 <h5 class="card-title"><?= $row["nama_produk"];?></h5>
-                <p class="card-text">(<?= $row["ram"];?>/<?= $row["internal"];?>)</p>
+                <p class="card-text">
+                    (<?= $row["ram"];?>/<?= $row["internal"];?>) || 
+                    
+                    <?php 
+                        if($row["stok"]>1000){
+                            $status='primary';
+                        }else if($row["stok"]>100){
+                            $status='info';
+                        }else if($row["stok"]>20){
+                            $status='success';
+                        }else{
+                            $status='warning';
+                        }
+                    ?>
+                    <?php 
+                    if($row["stok"]>0){ ?>
+                        <button type="button" class="btn btn-<?= $status;?> btn-sm">
+                            Stok <span class="badge badge-light"><?= $row["stok"];?></span>
+                        </button>
+                    <?php
+                    }else{ ?>
+                        <button type="button" class="btn btn-danger btn-sm">
+                            Stok Habis
+                        </button>
+                    <?php
+                    } ?>
+                </p>
                 <p><strong>Harga Rp <?= $row["harga"];?> ,-</strong></p>
                 <?php
                 if(isset($_SESSION["akun"])){
                     if($_SESSION["akun"]=='user'){ ?>
-                        <a href="index.php?page=keranjang&id_produk=<?= $row["id_produk"];?>" class="btn btn-danger btn-sm btn-block" role="button" aria-pressed="true">Beli</a>
+                        <?php if($row["stok"]>0){ ?>
+                            <a href="index.php?page=keranjang&id_produk=<?= $row["id_produk"];?>" class="btn btn-danger btn-sm btn-block" role="button" aria-pressed="true">Beli</a>
+                        <?php } ?>
                     <?php
                     }
                 } ?>

@@ -138,7 +138,8 @@
                                 <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2">
                                 <small id="emailHelp" class="form-text text-muted">konfirmasi kolom password apabila ingin mengubah password. Kosongkan apabila tidak ingin mengubah password.</small>
                             </div>
-                            <div class="form-group">    
+                            <div class="form-group"> 
+                                <label for="password2">Gambar</label>   
                                 <input type="file" name="gambar">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block btn-sm" name="edit_informasi">Submit</button>
@@ -150,3 +151,70 @@
     </div>
 </div>
 <!-- /modal edit akun sendiri -->
+
+<!-- modal toko -->
+<div class="modal fade" id="toko" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-header">
+                    <h5>
+                        Edit Informasi Toko
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <div class="form-row">
+                            <input type="hidden" value="<?= $toko["id_toko"];?>" name="id_toko">
+                            <input type="hidden" value="<?= $toko["logo"];?>" name="gambarLama">
+                            <div class="form-group col-6">
+                                <label for="nama_toko">Nama Toko</label>
+                                <input type="text" class="form-control form-control-sm" id="nama_toko" aria-describedby="namaHelp" placeholder="masukan nama toko" name="nama_toko" value="<?= $toko["nama_toko"]?>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="nomor_rekening">Nomor Rekening</label>
+                                <input type="text" class="form-control form-control-sm" id="nomor_rekening" aria-describedby="namaHelp" placeholder="masukan nomor rekening" name="nomor_rekening" value="<?= $toko["nomor_rekening"]?>">
+                                <small class="form-text text-white">contoh : BCA:123xxxxxxx</small>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="no_telepon">Nomor Telepon</label>
+                                <input type="text" class="form-control form-control-sm" id="no_telepon" aria-describedby="namaHelp" placeholder="masukan nomor telepon" name="no_telepon" value="<?= $toko["no_telepon"]?>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="whatsapp">WhatsApp</label>
+                                <input type="text" class="form-control form-control-sm" id="whatsapp" aria-describedby="namaHelp" placeholder="masukan nomor whatsapp" name="whatsapp" value="<?= $toko["whatsapp"]?>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="instagram">Instagram</label>
+                                <input type="text" class="form-control form-control-sm" id="instagram" aria-describedby="namaHelp" placeholder="masukan nama instagram" name="instagram" value="<?= $toko["instagram"]?>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="instagram_link">Link Instagram</label>
+                                <input type="text" class="form-control form-control-sm" id="instagram_link" aria-describedby="namaHelp" placeholder="masukan link instagram" name="instagram_link" value="<?= $toko["instagram_link"]?>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="facebook">Facebook</label>
+                                <input type="text" class="form-control form-control-sm" id="facebook" aria-describedby="namaHelp" placeholder="masukan nama facebook" name="facebook" value="<?= $toko["facebook"]?>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="facebook_link">Link Facebook</label>
+                                <input type="text" class="form-control form-control-sm" id="facebook_link" aria-describedby="namaHelp" placeholder="masukan link facebook" name="facebook_link" value="<?= $toko["facebook_link"]?>">
+                            </div>
+                            <div class="form-group col-12">
+                                <img src="img/<?= $toko["logo"]?>" alt="" style="width: 100px;height: auto;">
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="password2">Edit Logo</label> 
+                                <input type="file" name="gambar" value="<?= $toko["logo"]?>">    
+                            </div>
+                            <button type="submit mt-3 d-block p-2" class="btn btn-primary btn-sm" name="edit_toko">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

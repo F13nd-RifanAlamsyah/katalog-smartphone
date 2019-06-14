@@ -5,8 +5,10 @@
 	<div class="row justify-content-md-center">
 		<div class="col-md-5 mb-3 text-center">
 			<img src="img/profil/R.jpg" class="img-thumbnail rounded-circle" alt="" style="width: 250px; height: auto;">
-			<h5>Rifan Alamsyah</h5>
-			<p>(1606020)</p>
+			<span>
+				<h5>Rifan Alamsyah</h5>
+				<p>(1606020)</p>
+			</span>
 		</div>
 		<div class="col-md-5 mb-3 text-center">
 			<img src="img/profil/S.png" class="img-thumbnail rounded-circle" alt="" style="width: 250px; height: auto;">
