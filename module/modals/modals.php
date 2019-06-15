@@ -229,3 +229,44 @@
         </div>
     </div>
 </div>
+
+<!-- modal info -->
+<div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-header">
+                    Tutorial pembelian produk di <?= $toko["nama_toko"] ?>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>
+                            Buka aplikasi dan klik menu produk dan pilih merk produk yang ingin dibeli. <br> 
+                            <img src="img/tutorial/1.png" alt="">
+                        </li>
+                        <li>
+                            Klik tombol beli pada produk yang ingin dibeli. <br>
+                            <img src="img/tutorial/2.png" alt="" style="height: 300px;width: auto;">
+                        </li>
+                        <li>
+                            Setelah memilih produk maka secara otomatis anda akan di arahkan ke menu keranjang, pilih produk yang ingin dibayar dengan klik lengkapi pembayaran. <br>
+                            <img src="img/tutorial/3.png" alt="" style="height: 250px;width: auto;">
+                        </li>
+                        <li>
+                            Anda akan disuguhkan dengan tampilan pembayaran dimana anda dituntut untuk membayar ke nomor rekening yang ada dengan atas nama rekning yang sudah tercantum serta memasukan data alamat pengiriman. <br>
+                            <img src="img/tutorial/4.png" alt="" style="height: 400px;width: auto;">
+                        </li>
+                        <li>
+                            Langkah selanjutnya anda harus memasukan bukti bayar yang didapat dari atm atau bank dan diupload melalui menu yang tersedia. <br>
+                            <img src="img/tutorial/5.png" alt="">
+                        </li>
+                        <li>
+                            Setelah itu tunggu sampai admin mengkonfirmasi bukti bayar anda sampai produk yang anda beli tiba ditangan anda.
+                        </li>
+                    </ol>
+                    ps : apabila ada kendala atau masalah, anda dapat menghubungi kami dengan media sosial atau nomor telepon yang tersedia di halaman dashboard. trimakasih :)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

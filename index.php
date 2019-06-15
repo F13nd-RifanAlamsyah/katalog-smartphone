@@ -102,7 +102,7 @@ if(isset($_POST["edit_toko"])){
                         <i class="fas fa-mobile-alt"></i> Produk
                     </a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=produk">All</a>
+                        <a class="dropdown-item" href="index.php?page=produk">Semua</a>
                         <?php ; 
                         foreach($produkList as $row):
                         ?>
@@ -159,6 +159,19 @@ if(isset($_POST["edit_toko"])){
     <!-- konten -->
     <div class="content">
         <div class="container">
+            <!-- dismiss -->
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?php if(isset($akun["nama_akun"])){ ?>
+                    <strong>Hai <?= $akun["nama_akun"]; ?>!</strong>
+                <?php } ?>
+                 Ingin tau bagaimana pembelian produk di <?= $toko["nama_toko"] ?> 
+                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#info">
+                    Klik disini
+                </button>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             
             <?php
                 $file="page/$page.php";
@@ -174,6 +187,7 @@ if(isset($_POST["edit_toko"])){
         </div>
     </div>
     <!-- /konten -->
+    
 
     <!--  modal  -->
     <?php require 'module/modals/modals.php'; ?>

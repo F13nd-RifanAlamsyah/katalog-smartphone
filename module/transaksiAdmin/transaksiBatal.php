@@ -15,20 +15,38 @@
                         <th scope="col">Pembeli</th>
                         <th scope="col">Produk</th>
                         <th scope="col">Alasan Pembatalan</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                    $f=1;
+                    $g=1;
                     foreach($adminTransaksiTolak as $row): ?>
                         <tr>
-                            <th><?= $f; ?></th>
+                            <th><?= $g; ?></th>
                             <td><?= $row["nama_akun"]; ?></td>
                             <td><?= $row["nama_produk"]; ?></td>
                             <td><?= $row["alasan_tolak"]; ?></td>
+                            <td>
+                                <button type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#bukti_bayar_batal<?= $g;?>">Lihat Bukti Bayar</button>
+                            </td>
+                            <!-- modal bukti bayar -->
+                            <div class="modal fade" id="bukti_bayar_batal<?= $g;?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <img class="card-img-top" src="img/<?=$row["bukti_bayar"];?>" alt="<?=$row["bukti_bayar"];?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </tr>
+
                     <?php 
-                    $f++;
+                    $g++;
                     endforeach; ?>
                 </tbody>
             </table>
