@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="card">
                 <div class="card-header">
-                    Login
+                    <i class="fas fa-sign-in-alt"></i> Login
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -13,15 +13,15 @@
                 <div class="card-body">
                     <form action="" method="post">
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
                             <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="masukan email" name="email_akun" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
+                            <label for="password"><i class="fas fa-key"></i> Password</label>
                             <input type="password" class="form-control form-control-sm" id="password" placeholder="masukan" name="password" required>
                         </div>
                        
-                        <button type="submit" class="btn btn-primary btn-sm" name="login">Login</button>
+                        <button type="submit" class="btn btn-primary btn-sm" name="login"><i class="fas fa-greater-than"></i> Login</button>
                     </form>
                     <small id="emailHelp" class="form-text text-muted">Jika belum punya akun, <a href="" data-toggle="modal" data-target="#register">register</a>.</small>
                 </div>
@@ -50,9 +50,9 @@
                     <p class="card-text text-muted"><?= $akun["role"]; ?></p>    
                 </div>
                 <div class="card-footer">
-                    <a href="function/logout.php" class="btn btn-success float-left btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#informasi">Edit Informasi Akun</a>
+                    <a href="function/logout.php" class="btn btn-success float-left btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#informasi"><i class="fas fa-edit"></i> Edit Informasi Akun</a>
 
-                    <a href="function/logout.php" class="btn btn-danger float-right btn-sm" role="button" aria-pressed="true">Logout</a>
+                    <a href="function/logout.php" class="btn btn-danger float-right btn-sm" role="button" aria-pressed="true"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="modal-content">
             <div class="card">
                 <div class="card-header">
-                    Register
+                    <i class="fas fa-sign-in-alt"></i> Register
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -74,25 +74,28 @@
                 <div class="card-body">
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="nama">Nama</label>
+                            <label for="nama"><i class="fas fa-signature"></i> Nama</label>
                             <input type="text" class="form-control form-control-sm" id="nama" aria-describedby="namaHelp" placeholder="masukan nama" name="nama_akun">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
                             <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="masukan email" name="email_akun">
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
+                            <label for="password"><i class="fas fa-key"></i> Password</label>
                             <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password">
                         </div>
                         <div class="form-group">
-                            <label for="password2">Konfirmasi Password</label>
+                            <label for="password2"><i class="fas fa-key"></i> Konfirmasi Password</label>
                             <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2">
                         </div>
+                        <label ><i class="fas fa-user"></i> Foto Akun</label>
                         <div class="form-group">
+
                             <input type="file" name="gambar">    
                         </div>
-                        <button type="submit mt-3 d-block p-2" class="btn btn-primary btn-sm" name="register">Submit</button>
+
+                        <button type="submit mt-3 d-block p-2" class="btn btn-primary btn-sm" name="register"><i class="fas fa-greater-than"></i> Submit</button>
                     </form>
                 </div>
             </div>
@@ -121,25 +124,25 @@
                             <input type="hidden" value="<?= $akun["gambar"];?>" name="gambarLama">
                             <input type="hidden" value="<?= $akun["password"];?>" name="passwordLama">
                             <div class="form-group col-12">
-                                <label for="nama_admin">Nama Admin</label>
+                                <label for="nama_admin"><i class="fas fa-signature"></i> Nama</label>
                                 <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun" value="<?= $akun["nama_akun"];?>">
                             </div>
                             <div class="form-group col-12">
-                                <label for="email">Email</label>
+                                <label for="email"><i class="fas fa-envelope"></i> Email</label>
                                 <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $akun["email_akun"];?>">
                             </div>
                             <div class="form-group col-12">
-                                <label for="password">Password</label>
+                                <label for="password"><i class="fas fa-key"></i> Password</label>
                                 <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password">
                                 <small id="emailHelp" class="form-text text-muted">Isi kolom password apabila ingin mengubah password. Kosongkan apabila tidak ingin mengubah password.</small>
                             </div>
                             <div class="form-group col-12">
-                                <label for="password2">Konfirmasi Password</label>
+                                <label for="password2"><i class="fas fa-key"></i> Konfirmasi Password</label>
                                 <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2">
                                 <small id="emailHelp" class="form-text text-muted">konfirmasi kolom password apabila ingin mengubah password. Kosongkan apabila tidak ingin mengubah password.</small>
                             </div>
-                            <div class="form-group"> 
-                                <label for="password2">Gambar</label>   
+                            <label for="password2"><i class="fas fa-user"></i> Gambar</label>   
+                            <div class="form-group col-12"> 
                                 <input type="file" name="gambar">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block btn-sm" name="edit_informasi">Submit</button>
@@ -170,22 +173,30 @@
                         <div class="form-row">
                             <input type="hidden" value="<?= $toko["id_toko"];?>" name="id_toko">
                             <input type="hidden" value="<?= $toko["logo"];?>" name="gambarLama">
-                            <div class="form-group col-6">
+                            <div class="form-group col-4">
                                 <label for="nama_toko">Nama Toko</label>
                                 <input type="text" class="form-control form-control-sm" id="nama_toko" aria-describedby="namaHelp" placeholder="masukan nama toko" name="nama_toko" value="<?= $toko["nama_toko"]?>">
                             </div>
-                            <div class="form-group col-6">
+                            <div class="form-group col-4">
                                 <label for="nomor_rekening">Nomor Rekening</label>
                                 <input type="text" class="form-control form-control-sm" id="nomor_rekening" aria-describedby="namaHelp" placeholder="masukan nomor rekening" name="nomor_rekening" value="<?= $toko["nomor_rekening"]?>">
                                 <small class="form-text text-white">contoh : BCA:123xxxxxxx</small>
                             </div>
-                            <div class="form-group col-6">
+                            <div class="form-group col-4">
+                                <label for="atas_nama">Atas Nama Rekening</label>
+                                <input type="text" class="form-control form-control-sm" id="atas_nama" aria-describedby="namaHelp" placeholder="masukan nama rekening" name="atas_nama" value="<?= $toko["atas_nama"]?>">
+                            </div>
+                            <div class="form-group col-4">
                                 <label for="no_telepon">Nomor Telepon</label>
                                 <input type="text" class="form-control form-control-sm" id="no_telepon" aria-describedby="namaHelp" placeholder="masukan nomor telepon" name="no_telepon" value="<?= $toko["no_telepon"]?>">
                             </div>
-                            <div class="form-group col-6">
+                            <div class="form-group col-4">
                                 <label for="whatsapp">WhatsApp</label>
                                 <input type="text" class="form-control form-control-sm" id="whatsapp" aria-describedby="namaHelp" placeholder="masukan nomor whatsapp" name="whatsapp" value="<?= $toko["whatsapp"]?>">
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control form-control-sm" id="email" aria-describedby="namaHelp" placeholder="masukan email" name="email" value="<?= $toko["email"]?>">
                             </div>
                             <div class="form-group col-6">
                                 <label for="instagram">Instagram</label>

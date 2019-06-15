@@ -2,8 +2,8 @@
 <div class="card bg-dark text-white">
     <div class="card-header" id="headingOne">
         <h2 class="mb-0">
-            <button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
-                Sudah Dibayar <span class="badge badge-dark"><?= $bayar;?></span>
+            <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                <i class="fas fa-money-bill-alt"></i> Sudah Dibayar <span class="badge badge-light"><?= $bayar;?></span>
             </button>
         </h2>
     </div>

@@ -23,7 +23,7 @@ $countInfoPengguna=mysqli_num_rows($infoPengguna);
 			<div class="card text-white bg-primary mb-3" >
 				<div class="card-header">Produk</div>
 				<div class="card-body">
-				    <h1 class="card-title text-center"><?= $countInfoProduk;?></h1>
+				    <h1 class="card-title text-center"><?= $countInfoProduk;?> <i class="fas fa-mobile-alt"></i></h1>
 				    <p class="card-text text-center">Jumlah Produk</p>
 				</div>
 			</div>
@@ -33,7 +33,7 @@ $countInfoPengguna=mysqli_num_rows($infoPengguna);
 			<div class="card text-white bg-danger mb-3" >
 				<div class="card-header">Merk</div>
 				<div class="card-body">
-				    <h1 class="card-title text-center"><?= $countInfoMerk;?></h1>
+				    <h1 class="card-title text-center"><?= $countInfoMerk;?> <i class="fas fa-receipt"></i></h1>
 				    <p class="card-text text-center">Merk Smartphone</p>
 				</div>
 			</div>
@@ -43,7 +43,7 @@ $countInfoPengguna=mysqli_num_rows($infoPengguna);
 			<div class="card text-white bg-dark mb-3" >
 				<div class="card-header">Transaksi</div>
 				<div class="card-body">
-				    <h1 class="card-title text-center"><?= $countInfoTransaksi;?></h1>
+				    <h1 class="card-title text-center"><?= $countInfoTransaksi;?> <i class="fas fa-exchange-alt"></i></h1>
 				    <p class="card-text text-center">Transaksi Online</p>
 				</div>
 			</div>
@@ -53,7 +53,7 @@ $countInfoPengguna=mysqli_num_rows($infoPengguna);
 			<div class="card text-white bg-success mb-3" >
 				<div class="card-header">Pengguna</div>
 				<div class="card-body">
-				    <h1 class="card-title text-center"><?= $countInfoPengguna;?></h1>
+				    <h1 class="card-title text-center"><?= $countInfoPengguna;?> <i class="fas fa-user"></i></h1>
 				    <p class="card-text text-center">Pengguna Terdaftar</p>
 				</div>
 			</div>
@@ -65,10 +65,11 @@ $countInfoPengguna=mysqli_num_rows($infoPengguna);
 		
 		<div class="col-md-12 mt-3">
 			<p class="float-right">
-				<a href="" class="btn btn-success btn-sm"><i class=""></i> <?= $toko["whatsapp"]; ?></a>
-				<a href="<?= $toko["instagram_link"] ?>" class="btn btn-danger btn-sm"><i class=""></i> <?= $toko["instagram"]; ?></a>
-				<a href="<?= $toko["facebook_link"] ?>" class="btn btn-primary btn-sm"><i class=""></i> <?= $toko["facebook"]; ?></a>
-				<a href="#" class="btn btn-dark btn-sm"><i class=""></i> <?= $toko["no_telepon"]; ?></a>
+				<a href="" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> <?= $toko["whatsapp"]; ?></a>
+				<a href="<?= $toko["instagram_link"] ?>" class="btn btn-danger btn-sm"><i class="fab fa-instagram"></i> <?= $toko["instagram"]; ?></a>
+				<a href="<?= $toko["facebook_link"] ?>" class="btn btn-primary btn-sm"><i class="fab fa-facebook"></i> <?= $toko["facebook"]; ?></a>
+				<a href="#" class="btn btn-dark btn-sm"><i class="fas fa-phone"></i> <?= $toko["no_telepon"]; ?></a>
+				<a href="#" class="btn btn-info btn-sm"><i class="fas fa-envelope"></i> <?= $toko["email"]; ?></a>
 			</p>
 		</div>
 	</div>

@@ -3,7 +3,7 @@
     <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
             <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
-                Dalam Pengiriman <span class="badge badge-light"><?= $kirim; ?></span>
+                <i class="fas fa-paper-plane"></i> Dalam Pengiriman <span class="badge badge-light"><?= $kirim; ?></span>
             </button>
         </h2>
     </div>

@@ -2,7 +2,7 @@
     <div class="card-header" id="headingThree">
         <h2 class="mb-0">
             <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseThree">
-                Pesanan Sudah Dibayar <span class="badge badge-light"><?= $adminPendingConfirm; ?></span>
+                <i class="fas fa-money-bill-alt"></i> Pesanan Sudah Dibayar <span class="badge badge-light"><?= $adminPendingConfirm; ?></span>
             </button>
         </h2>
     </div>

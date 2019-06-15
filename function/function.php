@@ -251,12 +251,14 @@ function editToko($data){
     $id_toko=$data["id_toko"];
     $nama_toko=htmlspecialchars($data["nama_toko"]);
     $nomor_rekening=htmlspecialchars($data["nomor_rekening"]);
+    $atas_nama=htmlspecialchars($data["atas_nama"]);
     $no_telepon=htmlspecialchars($data["no_telepon"]);
     $whatsapp=htmlspecialchars($data["whatsapp"]);
     $instagram=htmlspecialchars($data["instagram"]);
     $instagram_link=htmlspecialchars($data["instagram_link"]);
     $facebook=htmlspecialchars($data["facebook"]);
     $facebook_link=htmlspecialchars($data["facebook_link"]);
+    $gambarLama=htmlspecialchars($data["gambarLama"]);
 
     if($_FILES['gambar']['error']===4){
         $gambar=$gambarLama;
@@ -267,6 +269,7 @@ function editToko($data){
     $query="UPDATE toko SET
                 nama_toko='$nama_toko',
                 nomor_rekening='$nomor_rekening',
+                atas_nama='$atas_nama',
                 no_telepon='$no_telepon',
                 whatsapp='$whatsapp',
                 instagram='$instagram',

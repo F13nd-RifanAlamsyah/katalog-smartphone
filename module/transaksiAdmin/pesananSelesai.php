@@ -2,7 +2,7 @@
     <div class="card-header" id="headingThree">
         <h2 class="mb-0">
             <button class="btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
-                Transaksi Pesanan Selesai <span class="badge badge-light"><?= $adminSelesai; ?></span>
+                <i class="fas fa-clipboard-list"></i> Transaksi Pesanan Selesai <span class="badge badge-light"><?= $adminSelesai; ?></span>
             </button>
         </h2>
     </div>

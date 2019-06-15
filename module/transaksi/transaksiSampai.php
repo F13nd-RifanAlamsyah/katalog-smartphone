@@ -3,7 +3,7 @@
     <div class="card-header" id="headingThree">
         <h2 class="mb-0">
             <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                Barang Sampai <span class="badge badge-light"><?= $sampai; ?></span>
+                <i class="fas fa-truck-loading"></i> Barang Sampai <span class="badge badge-light"><?= $sampai; ?></span>
             </button>
         </h2>
     </div>

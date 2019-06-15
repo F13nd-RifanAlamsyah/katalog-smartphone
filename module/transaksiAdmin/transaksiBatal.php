@@ -2,7 +2,7 @@
     <div class="card-header" id="headingThree">
         <h2 class="mb-0">
             <button class="btn btn-danger btn-block" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Pesanan Dibatalkan <span class="badge badge-light"><?= $adminTolak;  ?></span>
+                <i class="fas fa-skull"></i> Pesanan Dibatalkan <span class="badge badge-light"><?= $adminTolak;  ?></span>
             </button>
         </h2>
     </div>

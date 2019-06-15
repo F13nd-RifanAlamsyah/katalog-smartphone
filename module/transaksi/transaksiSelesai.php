@@ -2,8 +2,8 @@
 <div class="card bg-dark text-white">
     <div class="card-header" id="headingThree">
         <h2 class="mb-0">
-            <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-                Transaksi Selesai <span class="badge badge-light"><?= $selesai; ?></span>
+            <button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                <i class="fas fa-clipboard-list"></i> Transaksi Selesai <span class="badge badge-dark"><?= $selesai; ?></span>
             </button>
         </h2>
     </div>

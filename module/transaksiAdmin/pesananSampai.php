@@ -2,7 +2,7 @@
     <div class="card-header" id="headingThree">
         <h2 class="mb-0">
             <button class="btn btn-warning btn-block" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-                Pesanan Sampai <span class="badge badge-light"><?= $adminSampai; ?></span>
+                <i class="fas fa-truck-loading"></i> Pesanan Sampai <span class="badge badge-light"><?= $adminSampai; ?></span>
             </button>
         </h2>
     </div>

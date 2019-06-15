@@ -63,7 +63,7 @@ if(isset($_POST["edit_toko"])){
         echo "
             <script>
                 alert('gagal');
-                document.location.href='index.php';
+                //document.location.href='index.php';
             </script>
         ";
     }
@@ -94,12 +94,12 @@ if(isset($_POST["edit_toko"])){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_GET["page"]=='dashboard'){echo 'active'; } ?>" href="index.php?page=dashboard">Dashboard</a>
+                    <a class="nav-link <?php if($_GET["page"]=='dashboard'){echo 'active'; } ?>" href="index.php?page=dashboard"><i class="fas fa-bars"></i> Dashboard</a>
                 </li>
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php if($_GET["page"]=='produk'){echo 'active'; } ?>" href="?page=admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                        Produk
+                        <i class="fas fa-mobile-alt"></i> Produk
                     </a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index.php?page=produk">All</a>
@@ -112,14 +112,14 @@ if(isset($_POST["edit_toko"])){
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_GET["page"]=='profil'){echo 'active'; } ?>" href="index.php?page=profil">Profil</a>
+                    <a class="nav-link <?php if($_GET["page"]=='profil'){echo 'active'; } ?>" href="index.php?page=profil"><i class="fas fa-id-card"></i> Profil</a>
                 </li>
                 
                 <?php
                 if(isset($_SESSION["login"])){
                     if($_SESSION["login"]=='user'){ ?>
                     <li class="nav-item">
-                        <a class="nav-link <?php if($_GET["page"]=='keranjang'){echo 'active'; } ?>" href="index.php?page=keranjang">Keranjang <span class="badge badge-light"><?= $hasilTransaksi ?></span></a>
+                        <a class="nav-link <?php if($_GET["page"]=='keranjang'){echo 'active'; } ?>" href="index.php?page=keranjang"><i class="fas fa-shopping-cart"></i> Keranjang <span class="badge badge-light"><?= $hasilTransaksi ?></span></a>
                     </li>
                 <?php
                     }
@@ -130,14 +130,14 @@ if(isset($_POST["edit_toko"])){
                     if($_SESSION["login"]=='admin'){ ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php if($_GET["page"]=='adminTransaksi'||$_GET["page"]=='kelolaProduk'||$_GET["page"]=='kelolaAdmin'){echo 'active'; } ?>" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Admin <span class="badge badge-light"><?= $hasilTransaksiAdmin ?></span>
+                        <i class="fas fa-user-lock"></i> Admin <span class="badge badge-light"><?= $hasilTransaksiAdmin ?></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item <?php if($_GET["page"]=='adminTransaksi'){echo 'active'; } ?>" href="index.php?page=adminTransaksi">Transaksi <span class="badge badge-dark"><?= $hasilTransaksiAdmin ?></a>
-                        <a class="dropdown-item <?php if($_GET["page"]=='kelolaProduk'){echo 'active'; } ?>" href="index.php?page=kelolaProduk">Kelola Produk</a>
+                        <a class="dropdown-item <?php if($_GET["page"]=='adminTransaksi'){echo 'active'; } ?>" href="index.php?page=adminTransaksi"><i class="fas fa-shopping-basket"></i> Transaksi <span class="badge badge-dark"><?= $hasilTransaksiAdmin ?></a>
+                        <a class="dropdown-item <?php if($_GET["page"]=='kelolaProduk'){echo 'active'; } ?>" href="index.php?page=kelolaProduk"><i class="fas fa-mobile"></i> Kelola Produk</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#toko">Profil Toko</a>
-                        <a class="dropdown-item <?php if($_GET["page"]=='kelolaAdmin'){echo 'active'; } ?>" href="index.php?page=kelolaAdmin">Kelola Admin</a>                        
+                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#toko"><i class="fas fa-store"></i> Profil Toko</a>
+                        <a class="dropdown-item <?php if($_GET["page"]=='kelolaAdmin'){echo 'active'; } ?>" href="index.php?page=kelolaAdmin"><i class="fas fa-users-cog"></i> Kelola Admin</a>                        
                     </div>
                 </li>
                 <?php }
@@ -149,7 +149,7 @@ if(isset($_POST["edit_toko"])){
                 <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#login">Login</button>
             </form>
             <?php }else{?>
-                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#akun">Hi, <?= $akun["nama_akun"];?> <img src="img/<?= $akun["gambar"];?>" class="img-fluid" alt="" style="width: 36px; height: auto;">
+                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#akun">Hi, <?= $akun["nama_akun"];?><img src="img/<?= $akun["gambar"];?>" class="img-fluid" alt="" style="width: 36px; height: auto;">
                 </button>
             <?php } ?>
         </div>

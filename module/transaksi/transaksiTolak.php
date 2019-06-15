@@ -3,7 +3,7 @@
     <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
             <button class="btn btn-danger btn-block" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Pembelian Ditolak <span class="badge badge-light"><?= $tolak; ?></span>
+                <i class="fas fa-skull"></i> Pembelian Ditolak <span class="badge badge-light"><?= $tolak; ?></span>
             </button>
         </h2>
     </div>
