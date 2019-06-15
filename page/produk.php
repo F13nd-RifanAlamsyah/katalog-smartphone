@@ -11,7 +11,7 @@ if(!isset($_GET["merk"])){
 }else{
     $merk=$_GET["merk"];
     $produk=query("SELECT * FROM produk WHERE merk='$merk'");
-    $produkMerk=query("SELECT DISTINCT merk FROM produk WHERE merk='$merk'");
+    $produkMerk=query("SELECT DISTINCT merk FROM produk WHERE merk='$merk' ORDER BY merk");
 ?>
     <div class="card bg-dark text-white text-center">
         <?php foreach ($produkMerk as $row) {

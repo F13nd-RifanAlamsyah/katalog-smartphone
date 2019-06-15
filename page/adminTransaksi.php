@@ -32,7 +32,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
     <?php 
     if(isset($_GET["id_transaksi_setujui"])) {
         $id_transaksi_setujui=$_GET["id_transaksi_setujui"];
-        $transaksiSetujui=query("$transaksi && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksi_setujui'")[0];
+        $transaksiSetujui=query("$transaksi && transaksi.id_transaksi='$id_transaksi_setujui'")[0];
         ?>
         <div class="col-md-3">
             <div class="card">
@@ -43,7 +43,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                     <form action="" method="post" enctype="multipart/form-data">    
                         <input type="hidden" value="<?= $_GET["id_transaksi_setujui"];?>" name="id_transaksi">
                         <input type="hidden" value="<?= $transaksiSetujui["stok"];?>" name="stok">
-                        <input type="text" value="<?= $transaksiSetujui["id_produk"];?>" name="id_produk">
+                        <input type="hidden" value="<?= $transaksiSetujui["id_produk"];?>" name="id_produk">
                         <img src="img/<?= $transaksiSetujui["gambar"]; ?>" alt="" class="card-img-top">
                         <p class="text-center"><?= $transaksiSetujui["nama_produk"]; ?></p>
                         <div class="form-group">
@@ -69,7 +69,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
     <?php 
     if(isset($_GET["id_transaksi_batal"])) {
         $id_transaksi_batal=$_GET["id_transaksi_batal"];
-        $transaksiBatal=query("$transaksi && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksi_batal'")[0];
+        $transaksiBatal=query("$transaksi && transaksi.id_transaksi='$id_transaksi_batal'")[0];
         ?>
         <div class="col-md-3">
             <div class="card">

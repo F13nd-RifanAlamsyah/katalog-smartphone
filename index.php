@@ -4,7 +4,7 @@ require 'function/login.php';
 
 $toko=query("SELECT * FROM toko")[0];
 
-$produkList=query("SELECT DISTINCT merk FROM produk");
+$produkList=query("SELECT DISTINCT merk FROM produk ORDER BY merk");
 if(isset($_SESSION["id_akun"])){
     $id_akun=$_SESSION["id_akun"];
     $akun=query("SELECT * FROM akun WHERE id_akun='$id_akun'")[0];    
@@ -119,7 +119,7 @@ if(isset($_POST["edit_toko"])){
                 if(isset($_SESSION["login"])){
                     if($_SESSION["login"]=='user'){ ?>
                     <li class="nav-item">
-                        <a class="nav-link <?php if($_GET["page"]=='keranjang'){echo 'active'; } ?>" href="index.php?page=keranjang">Keranjang <span class="badge badge-light"><?= $hasilTransaski ?></span></a>
+                        <a class="nav-link <?php if($_GET["page"]=='keranjang'){echo 'active'; } ?>" href="index.php?page=keranjang">Keranjang <span class="badge badge-light"><?= $hasilTransaksi ?></span></a>
                     </li>
                 <?php
                     }
@@ -130,10 +130,10 @@ if(isset($_POST["edit_toko"])){
                     if($_SESSION["login"]=='admin'){ ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php if($_GET["page"]=='adminTransaksi'||$_GET["page"]=='kelolaProduk'||$_GET["page"]=='kelolaAdmin'){echo 'active'; } ?>" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Admin
+                        Admin <span class="badge badge-light"><?= $hasilTransaksiAdmin ?></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item <?php if($_GET["page"]=='adminTransaksi'){echo 'active'; } ?>" href="index.php?page=adminTransaksi">Transaksi</a>
+                        <a class="dropdown-item <?php if($_GET["page"]=='adminTransaksi'){echo 'active'; } ?>" href="index.php?page=adminTransaksi">Transaksi <span class="badge badge-dark"><?= $hasilTransaksiAdmin ?></a>
                         <a class="dropdown-item <?php if($_GET["page"]=='kelolaProduk'){echo 'active'; } ?>" href="index.php?page=kelolaProduk">Kelola Produk</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="" data-toggle="modal" data-target="#toko">Profil Toko</a>

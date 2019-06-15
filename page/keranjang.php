@@ -18,6 +18,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
         <div class="accordion" id="accordionExample">
             <?php 
                 require 'module/transaksi/transaksiPending.php';
+                require 'module/transaksi/transaksiBayar.php';
                 require 'module/transaksi/transaksiTolak.php';
                 require 'module/transaksi/transaksiKirim.php';
                 require 'module/transaksi/transaksiSampai.php';
@@ -30,7 +31,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
     <?php 
     if(isset($_GET["id_transaksi"])) {
         $id_transaksiGET=$_GET["id_transaksi"];
-        $transaksiPendingGET=query("$transaksi WHERE transaksi.id_akun='$id_akun' && transaksi.status='pending' && transaksi.id_transaksi='$id_transaksiGET'")[0];
+        $transaksiPendingGET=query("$transaksi WHERE transaksi.id_akun='$id_akun' && transaksi.id_transaksi='$id_transaksiGET'")[0];
         if($transaksiPendingGET['bukti_bayar']==''){
         ?>
             <div class="col-md-3">
@@ -43,9 +44,18 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                             <input type="hidden" value="<?= $_GET["id_transaksi"];?>" name="id_transaksi">
                             <img src="img/<?= $transaksiPendingGET["gambar"]; ?>" alt="" class="card-img-top">
                             <p class="text-center"><?= $transaksiPendingGET["nama_produk"]; ?></p>
+    
+                            <div class="form-group">
+                                <label for="nomor_rekening">Pembayaran No Rekening</label>
+                                <input type="text" class="form-control form-control-sm" id="notelp" aria-describedby="notelp" name="nomor_rekening" value="<?= $toko["nomor_rekening"] ?>" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="atas_nama">Atas Nama</label>
+                                <input type="text" class="form-control form-control-sm" id="notelp" aria-describedby="notelp" name="atas_nama" value="<?= $toko["atas_nama"] ?>" disabled>
+                            </div>
                             <div class="form-group">
                                 <label for="notelp">No Telp</label>
-                                <input type="number" class="form-control form-control-sm" id="notelp" aria-describedby="notelp" placeholder="masukan nomor telp" name="no_telp">
+                                <input type="text" class="form-control form-control-sm" id="notelp" aria-describedby="notelp" placeholder="masukan nomor telp" name="no_telp">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat Lengkap</label>
@@ -113,6 +123,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                     <div class="card-body"> 
                         <form action="" method="post" enctype="multipart/form-data">    
                             <input type="hidden" value="<?= $_GET["id_transaksi_batal"];?>" name="id_transaksi">
+                            <input type="hidden" value="<?= $_SESSION["akun"];?>" name="role">
                             <img src="img/<?= $transaksiPendingBatalGET["gambar"]; ?>" alt="" class="card-img-top">
                             <p class="text-center"><?= $transaksiPendingBatalGET["nama_produk"]; ?></p>
                             <div class="form-group">

@@ -10,9 +10,21 @@ if(isset($_SESSION["id_akun"])){
     transaksi ON akun.id_akun=transaksi.id_akun JOIN
     produk ON transaksi.id_produk=produk.id_produk
     WHERE transaksi.id_akun='$id_akun'";
+    $transaksiSelesai=mysqli_query($conn,"$transaksi && transaksi.status='selesai'");
+    $transaksiTolak=mysqli_query($conn,"$transaksi && transaksi.status='tolak'");
     $countTransaksi=mysqli_query($conn,"$transaksi");
-    $hasilTransaski=mysqli_num_rows($countTransaksi);
+    $hasilTransaksi=mysqli_num_rows($countTransaksi)-mysqli_num_rows($transaksiSelesai)-mysqli_num_rows($transaksiTolak);
 }
+
+$transaksiAdmin="SELECT akun.id_akun,akun.nama_akun ,transaksi.id_transaksi,transaksi.status, transaksi.bukti_bayar,transaksi.no_telp,transaksi.alamat,transaksi.resi,transaksi.review,transaksi.alasan_tolak,produk.id_produk,produk.nama_produk, produk.harga,produk.gambar 
+FROM akun JOIN 
+transaksi ON akun.id_akun=transaksi.id_akun JOIN
+produk ON transaksi.id_produk=produk.id_produk
+";
+
+$countTransaksiAdmin=mysqli_query($conn,"$transaksiAdmin WHERE transaksi.status='dibayar'");
+$hasilTransaksiAdmin=mysqli_num_rows($countTransaksiAdmin);
+
 
 //fungsi query
 function query($query){
@@ -347,7 +359,8 @@ function pendingToBayar($data){
     $query="UPDATE transaksi SET
                 no_telp='$no_telp',
                 alamat='$alamat',
-                bukti_bayar='$gambar'
+                bukti_bayar='$gambar',
+                status='dibayar'
                 
                 WHERE id_transaksi=$id_transaksi
                 ";
