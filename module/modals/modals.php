@@ -14,7 +14,7 @@
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                            <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="masukan email" name="email_akun" required>
+                            <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="masukan email" name="email_akun" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="password"><i class="fas fa-key"></i> Password</label>
@@ -75,24 +75,23 @@
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nama"><i class="fas fa-signature"></i> Nama</label>
-                            <input type="text" class="form-control form-control-sm" id="nama" aria-describedby="namaHelp" placeholder="masukan nama" name="nama_akun">
+                            <input type="text" class="form-control form-control-sm" id="nama" aria-describedby="namaHelp" placeholder="masukan nama" name="nama_akun" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                            <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="masukan email" name="email_akun">
+                            <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="masukan email" name="email_akun" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="password"><i class="fas fa-key"></i> Password</label>
-                            <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password">
+                            <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="password2"><i class="fas fa-key"></i> Konfirmasi Password</label>
-                            <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2">
+                            <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2" required autocomplete="off">
                         </div>
                         <label ><i class="fas fa-user"></i> Foto Akun</label>
                         <div class="form-group">
-
-                            <input type="file" name="gambar">    
+                            <input type="file" name="gambar" required>    
                         </div>
 
                         <button type="submit mt-3 d-block p-2" class="btn btn-primary btn-sm" name="register"><i class="fas fa-greater-than"></i> Submit</button>
@@ -125,15 +124,15 @@
                             <input type="hidden" value="<?= $akun["password"];?>" name="passwordLama">
                             <div class="form-group col-12">
                                 <label for="nama_admin"><i class="fas fa-signature"></i> Nama</label>
-                                <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun" value="<?= $akun["nama_akun"];?>">
+                                <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun" value="<?= $akun["nama_akun"];?>" required autocomplete="off">
                             </div>
                             <div class="form-group col-12">
                                 <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                                <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $akun["email_akun"];?>">
+                                <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $akun["email_akun"];?>" required autocomplete="off">
                             </div>
                             <div class="form-group col-12">
                                 <label for="password"><i class="fas fa-key"></i> Password</label>
-                                <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password">
+                                <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password" >
                                 <small id="emailHelp" class="form-text text-muted">Isi kolom password apabila ingin mengubah password. Kosongkan apabila tidak ingin mengubah password.</small>
                             </div>
                             <div class="form-group col-12">

@@ -29,20 +29,20 @@ if(isset($_POST["edit_admin"])){
                     <input type="hidden" value="<?= $row["password"];?>" name="passwordLama">
                     <div class="form-group col-12">
                         <label for="nama_admin">Nama Admin</label>
-                        <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun" value="<?= $row["nama_akun"];?>">
+                        <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun" value="<?= $row["nama_akun"];?>" autofocus autocomplete="off">
                     </div>
                     <div class="form-group col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $row["email_akun"];?>">
+                        <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $row["email_akun"];?>" autocomplete="off">
                     </div>
                     <div class="form-group col-12">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password">
+                        <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password" autocomplete="off">
                         <small id="emailHelp" class="form-text text-muted">Isi kolom password apabila ingin mengubah password. Kosongkan apabila tidak ingin mengubah password.</small>
                     </div>
                     <div class="form-group col-12">
                         <label for="password2">Konfirmasi Password</label>
-                        <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2">
+                        <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2" autocomplete="off">
                         <small id="emailHelp" class="form-text text-muted">konfirmasi kolom password apabila ingin mengubah password. Kosongkan apabila tidak ingin mengubah password.</small>
                     </div>
                     <div class="form-group">    

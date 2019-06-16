@@ -55,11 +55,11 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                             </div>
                             <div class="form-group">
                                 <label for="notelp">No Telp</label>
-                                <input type="text" class="form-control form-control-sm" id="notelp" aria-describedby="notelp" placeholder="masukan nomor telp" name="no_telp">
+                                <input type="text" class="form-control form-control-sm" id="notelp" aria-describedby="notelp" placeholder="masukan nomor telp" name="no_telp" autofocus autocomplete="off" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat Lengkap</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Bukti Bayar</label>

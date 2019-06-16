@@ -22,7 +22,7 @@ $produk=query("SELECT * FROM produk");
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nama Smartphone</th>
-                            <th scope="col">Harga</th>
+                            <th scope="col">Stok</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -33,7 +33,14 @@ $produk=query("SELECT * FROM produk");
                             <tr>
                                 <th scope="row"><?= $i;?></th>
                                 <td><?= $row["nama_produk"];?></td>
-                                <td>Rp <?= $row["harga"];?>,-</td>
+                                <td class="text-center">
+                                    <?php 
+                                    if($row["stok"]<=0){
+                                        echo "<span class='badge badge-danger'>Habis</span>";
+                                    }else{
+                                        echo $row["stok"];
+                                    } ?>
+                                </td>
                                 <td>
                                     <a href="index.php?page=kelolaProduk&id_produk=<?= $row["id_produk"];?>" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Edit</a>
                                     <a href="function/hapusProduk.php?id_produk=<?= $row["id_produk"];?>" class="btn btn-danger btn-sm" role="button" aria-pressed="true" onclick="return confirm('yakin mau menghapus data?')">Hapus</a>

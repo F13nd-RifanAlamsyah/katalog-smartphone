@@ -56,7 +56,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                         </div>
                         <div class="form-group">
                             <label for="resi">Resi Pengiriman</label>
-                            <input type="text" class="form-control form-control-sm" id="resi" aria-describedby="notelp" placeholder="masukan resi pengiriman" name="resi">
+                            <input type="text" class="form-control form-control-sm" id="resi" aria-describedby="notelp" placeholder="masukan resi pengiriman" name="resi" required autocomplete="off" autofocus>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm" name="pending_to_kirim">Kirim</button>
                     </form>
@@ -92,7 +92,7 @@ if(!$_SESSION['login']=='admin'||!$_SESSION['login']=='user'){
                         </div>
                         <div class="form-group">
                             <label for="alasan_tolak">Alasan Pembatalan</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alasan_tolak"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alasan_tolak" autofocus></textarea>
                         </div>
                         <button type="submit" class="btn btn-danger btn-sm" name="pending_to_tolak">Kirim</button>
                     </form>

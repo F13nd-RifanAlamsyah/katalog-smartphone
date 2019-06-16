@@ -26,19 +26,19 @@ if(isset($_POST["tambah_admin"])){
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="nama_admin">Nama Admin</label>
-                        <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun">
+                        <input type="text" class="form-control form-control-sm" id="nama_admin" placeholder="Masukan nama admin" name="nama_akun" required autofocus="" autocomplete="off">
                     </div>
                     <div class="form-group col-12">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun">
+                        <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" required autocomplete="off">
                     </div>
                     <div class="form-group col-12">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password">
+                        <input type="password" class="form-control form-control-sm" id="password" aria-describedby="passwordHelp" placeholder="masukan password" name="password" required autocomplete="off">
                     </div>
                     <div class="form-group col-12">
                         <label for="password2">Konfirmasi Password</label>
-                        <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2">
+                        <input type="password" class="form-control form-control-sm" id="password2" aria-describedby="password2Help" placeholder="konfirmasi password" name="password2" required autocomplete="off">
                     </div>
                     <div class="form-group">    
                         <input type="file" name="gambar">
