@@ -128,7 +128,7 @@
                             </div>
                             <div class="form-group col-12">
                                 <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                                <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $akun["email_akun"];?>" required autocomplete="off">
+                                <input type="email" class="form-control form-control-sm" id="email" placeholder="Masukan email" name="email_akun" value="<?= $akun["email_akun"];?>" required autocomplete="off" disabled>
                             </div>
                             <div class="form-group col-12">
                                 <label for="password"><i class="fas fa-key"></i> Password</label>
