@@ -11,7 +11,7 @@
     <div id="collapseSix" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
             <?php 
-            if($pending>0){ ?>
+            if($bayar>0){ ?>
                 <table class="table table-dark">
                     <thead>
                         <tr>

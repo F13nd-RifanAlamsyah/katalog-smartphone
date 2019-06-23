@@ -148,7 +148,7 @@ function tambahProduk($data){
 
     $query="INSERT INTO produk
                 VALUES
-                ('','$merk','$nama_produk','$harga','$deskripsi','$layar','$resolusi_layar','$os','$chipset','$cpu','$gpu','$ram','$internal','$fcamera','$mcamera','$baterai','$gambar','stok')
+                ('','$merk','$nama_produk','$harga','$deskripsi','$layar','$resolusi_layar','$os','$chipset','$cpu','$gpu','$ram','$internal','$fcamera','$mcamera','$baterai','$gambar','$stok')
                 ";
     mysqli_query($conn,$query);
     return mysqli_affected_rows($conn);
